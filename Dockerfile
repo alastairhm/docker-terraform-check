@@ -1,6 +1,6 @@
 FROM alpine:latest as security
-ARG TFSEC_VER=v0.58.14
-ARG TFLINT_VER=v0.33.1
+ARG TFSEC_VER=v1.21.0
+ARG TFLINT_VER=v0.36.2
 
 RUN apk add --no-cache git bash && \
     adduser -D -g "security" -s /bin/sh security && \
