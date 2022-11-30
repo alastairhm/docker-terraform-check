@@ -3,5 +3,5 @@ cd "$TEST_DIR" || exit
 pwd
 ls -l
 tfsec
-tflint ./
+tflint --config /home/security/config/.tflint.hcl ./
 
