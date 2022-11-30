@@ -24,11 +24,30 @@ Build with latest versions.
 
 ## Running
 
-Switch to terraform directory you wish to check, then run
+### Basic
+
+Switch to terraform directory you wish to check, then run;
 
 ```bash
 docker run --rm -it -v $PWD:/home/security/workdir ghcr.io/alastairhm/docker-terraform-check:latest
 ```
+
+### Pass in directory path
+
+If you want to change to a sub-directory to run the tests, run;
+
+```bash
+docker run --rm -it -v $PWD:/home/security/workdir -e TEST_DIR=path/to/sub/directory ghcr.io/alastairhm/docker-terraform-check:latest
+```
+
+### Pass in configuration files
+
+If you want to provide your own `.tfsec.yml` and `.tflint.hcl` configuration files, place them in a `$PWD/config` and run;
+
+```bash
+docker run --rm -it -v $PWD:/home/security/workdir -v $PWD/config:/home/security/config ghcr.io/alastairhm/docker-terraform-check:latest
+```
+
 
 ```text
           _    _ __  __ 
