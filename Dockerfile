@@ -13,5 +13,6 @@ RUN wget https://github.com/aquasecurity/tfsec/releases/download/${TFSEC_VER}/tf
 USER security
 WORKDIR /home/security/workdir
 COPY run_checks.sh /usr/bin/run_checks.sh
+ENV TEST_DIR=./
 
 ENTRYPOINT ["/usr/bin/run_checks.sh"]
