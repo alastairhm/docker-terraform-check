@@ -1,4 +1,7 @@
 #!/bin/bash
+cd "$TEST_DIR" || exit
+pwd
 ls -l
-tfsec
-tflint ./
+tfsec --config-file /home/security/config/.tfsec.yml
+tflint --config /home/security/config/.tflint.hcl ./
+
